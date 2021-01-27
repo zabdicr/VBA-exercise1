@@ -1,0 +1,27 @@
+Sub SpecialSheet()
+'
+' SpecialSheet Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+N
+'
+    
+    Selection.CurrentRegion.Select
+    Selection.SpecialCells(xlCellTypeBlanks).Select
+    Selection.FormulaR1C1 = "N"
+    
+   
+    
+End Sub
+
+Sub HighlightFormulas()
+
+Selection.CurrentRegion.Select
+    Selection.SpecialCells(xlCellTypeFormulas, 23).Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 65535
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+End Sub
